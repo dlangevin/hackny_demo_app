@@ -1,0 +1,21 @@
+:javascript
+  $(Comments.initialize)
+
+%h1 #{@post.title}
+
+%p #{@post.body}
+
+%h2 Comments
+
+%ul
+  %li 
+    %h3 Add a Comment
+    %form#comment_form{:method => "POST", :action => post_comments_path(@post.id)}
+      #{text_field_tag("comment[body]")}
+      %button Save
+  
+  - @comments.each do |comment|
+    %li #{comment.body} (#{time_ago_in_words(comment.created_at)} ago)
+
+
+

@@ -1,0 +1,15 @@
+
+%h1
+  Test form
+
+%form
+  %p
+    %label Text
+    %input{:type => "text", :name => "text"}
+  %p
+    %button{:type => "submit"}
+      Submit
+
+%section
+  %h2 You entered: #{@content}
+  

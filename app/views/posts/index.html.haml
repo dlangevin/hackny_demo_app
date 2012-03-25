@@ -1,0 +1,21 @@
+
+%h1 All Posts
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Body
+      %th Created
+      %th Updated
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td #{post.title}
+        %td #{post.body}
+        %td #{post.created_at}
+        %td #{post.updated_at}
+
+
+%p
+  #{link_to("New Post", new_post_path)}
